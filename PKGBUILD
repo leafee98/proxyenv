@@ -10,9 +10,11 @@ depends=('bash')
 source=(
     "proxyenv"
     "proxyenv.conf"
+    "LICENSE"
 )
 
 sha256sums=(
+    'SKIP'
     'SKIP'
     'SKIP'
 )
@@ -22,6 +24,7 @@ pkgver() {
 }
 
 package() {
-    install -Dm 755 "${srcdir}/proxyenv" "${pkgdir}/usr/bin/proxyenv"
-    install -Dm 644 "${srcdir}/proxyenv.conf" "${pkgdir}/etc/proxyenv.conf"
+    install -Dm755 "${srcdir}/proxyenv" "${pkgdir}/usr/bin/proxyenv"
+    install -Dm644 "${srcdir}/proxyenv.conf" "${pkgdir}/etc/proxyenv.conf"
+    install -Dm644 "${srcdir}/LICENSE" "${pkgdir}/usr/share/licenses/proxyenv/LICENSE"
 }
