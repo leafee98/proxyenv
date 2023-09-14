@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+if [[ -z "$PROXYENV_CONFPATH" ]] ; then
+    if [[ -e "/etc/proxyenv.conf" ]] ; then
+        source "/etc/proxyenv.conf"
+    else
+        echo "custom configuration location '/etc/proxyenv.conf' not exists" >&2
+        echo "exiting...'
+        exit 1
+    fi
+else
+    if [[ -e "$PROXYENV_CONFPATH" ]] ; then
+        source "$PROXYENV_CONFPATH"
+    else
+        echo "custom configuration location '$PROXYENV_CONFPATH' not exists" >&2
+        echo "exiting...'
+        exit 1
+    fi
+fi
+
+if [[ -z "$PROXYENV_TARGET_PROXY" ]] ; then
+    echo "cannot find PROXYENV_TARGET_PROXY" >&2
+    echo "exiting...'
+    exit 1
+fi
+
+export PROXY="$PROXYENV_TARGET_PROXY"
+export HTTP_PROXY="$PROXYENV_TARGET_PROXY"
+export HTTPS_PROXY="$PROXYENV_TARGET_PROXY"
+
+export proxy="$PROXYENV_TARGET_PROXY"
+export http_proxy="$PROXYENV_TARGET_PROXY"
+export https_proxy="$PROXYENV_TARGET_PROXY"
+
+export NOPROXY="$PROXYENV_NOPROXY"
+
+exec "$@"
