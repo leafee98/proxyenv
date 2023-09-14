@@ -5,7 +5,7 @@ if [[ -z "$PROXYENV_CONFPATH" ]] ; then
         source "/etc/proxyenv.conf"
     else
         echo "custom configuration location '/etc/proxyenv.conf' not exists" >&2
-        echo "exiting...'
+        echo "exiting..."
         exit 1
     fi
 else
@@ -13,14 +13,14 @@ else
         source "$PROXYENV_CONFPATH"
     else
         echo "custom configuration location '$PROXYENV_CONFPATH' not exists" >&2
-        echo "exiting...'
+        echo "exiting..."
         exit 1
     fi
 fi
 
 if [[ -z "$PROXYENV_TARGET_PROXY" ]] ; then
     echo "cannot find PROXYENV_TARGET_PROXY" >&2
-    echo "exiting...'
+    echo "exiting..."
     exit 1
 fi
 
