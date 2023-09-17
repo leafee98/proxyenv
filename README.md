@@ -28,7 +28,7 @@ read the proxy actually to be used. Otherwise `/etc/proxyenv.conf` will be used.
 The configuration file (default `/etc/proxyenv.conf`) will be sourced when proxyenv run,
 so take care no let this file's permission to open, 755 is suggested.
 
-For entry detail of configuration file, see [proxyenv.conf](/proxyenv.conf) in this repository.
+For entry detail of configuration file, see `proxyenv.conf` in this repository.
 
 ## Misc
 
