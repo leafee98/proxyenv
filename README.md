@@ -32,6 +32,11 @@ For entry detail of configuration file, see `proxyenv.conf` in this repository.
 
 ## Misc
 
+### Which version to use
+
+Althought there are tags, using the code on branch `main` is always suggested. The tag
+was added just to let `git describe` happy, which used in `PKGBUILD`
+
 ### Install on Archlinux
 
 Since I add a PKGBUILD at the root of repository, you can use the following command
