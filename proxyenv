@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Just quit queitly when no program specfied
+if (( "$#" -le 0 )) ; then
+    exit 0
+fi
+
 if [[ -z "$PROXYENV_CONFPATH" ]] ; then
     if [[ -e "/etc/proxyenv.conf" ]] ; then
         source "/etc/proxyenv.conf"
