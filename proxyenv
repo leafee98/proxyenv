@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Just quit queitly when no program specfied
-if (( "$#" -le 0 )) ; then
+if (( "$#" == 0 )) ; then
     exit 0
 fi
 
